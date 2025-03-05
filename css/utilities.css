@@ -1,13 +1,16 @@
-.flex{
-    display:flex;
+.flex {
+    display: flex;
 }
-.items-center{
-    align-items:center;
+
+.items-center {
+    align-items: center;
 }
-.justify-between{
+
+.justify-between {
     justify-content: space-between;
 }
-.btn{
+
+/* .btn{
     padding:0.8rem 3rem;
     font-size:1rem;
     font-weight:600;
@@ -30,26 +33,69 @@
     background:transparent;
     border-color: var(--primary);
     color:var(--primary);
+} */
+
+/* From Uiverse.io by SujitAdroja */
+
+
+.btn {
+    color: var(--primary);
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--primary);
+    padding: 10px 20px;
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: bold;
+    background: transparent;
+    position: relative;
+    transition: all 1s;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
-.btn-primary a{
+.btn:hover {
+    color: white;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    top: 0;
+    left: -40px;
+    transform: skewX(45deg);
+    background-color: var(--primary);
+    z-index: -1;
+    transition: all 1s;
+}
+
+.btn:hover::before {
+    width: 160%;
+}
+
+
+.btn-primary a {
     color: black;
 }
 
-.btn-secondary{
-    background:transparent;
-    color:var(--primary);
-    border-color:var(--primary);
-}
-.btn-secondary:hover{
-    background:var(--primary);
-    color:var(--secondary);
+.btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border-color: var(--primary);
 }
 
-.flex-1{
-    flex:1;
+.btn-secondary:hover {
+    background: var(--primary);
+    color: var(--secondary);
 }
-.justify-center{
+
+.flex-1 {
+    flex: 1;
+}
+
+.justify-center {
     justify-content: center;
 }
 
@@ -57,8 +103,10 @@
 /* ปุ่มเลื่อนไปบนสุด */
 .scroll-to-top-btn {
     position: fixed;
-    bottom: 30px;  /* ปุ่มอยู่ที่ด้านล่าง */
-    right: 30px;   /* ปุ่มอยู่ที่ขอบขวา */
+    bottom: 30px;
+    /* ปุ่มอยู่ที่ด้านล่าง */
+    right: 30px;
+    /* ปุ่มอยู่ที่ขอบขวา */
     background-color: var(--ternary);
     color: white;
     border: none;
@@ -66,11 +114,47 @@
     padding: 15px;
     font-size: 20px;
     cursor: pointer;
-    display: none; /* ซ่อนปุ่มเมื่อยังไม่เลื่อนลงไปล่างสุด */
+    display: none;
+    /* ซ่อนปุ่มเมื่อยังไม่เลื่อนลงไปล่างสุด */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     margin: 30px;
 }
 
 .scroll-to-top-btn:hover {
     background-color: var(--primary);
+}
+
+
+/* From Uiverse.io by reshades */
+section.blog .button {
+    background-color: #ffffff00;
+    color: var(--black);
+    width: 8.5em;
+    height: 2.9em;
+    border: var(--primary) 0.2em solid;
+    border-radius: 11px;
+    text-align: right;
+    transition: all 0.6s ease;
+    text-decoration: none;
+}
+
+section.blog .button:hover {
+    background-color: var(--primary);
+    cursor: pointer;
+}
+
+section.blog .button svg {
+    width: 1.6em;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: flex;
+    transition: all 0.6s ease;
+}
+
+section.blog .button:hover svg {
+    transform: translateX(5px);
+}
+
+section.blog .text {
+    margin: 0 1.5em ;
 }

@@ -252,6 +252,7 @@ section.about .social a img {
     text-align: center;
 }
 
+/* หน้า Skills*/
 section.Skills {
     background: var(--light);
 }
@@ -267,17 +268,6 @@ section.Skills .card-wrapper {
 }
 
 section.Skills .card-wrapper .card {
-    /* background: var(--pure);
-    padding: 3rem 2rem;
-    position: relative;
-    padding-top: 5rem;
-    text-align: center;
-    transition: all .3s ease;
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    -o-transition: all .3s ease; */
-
     width: 200px; /* กำหนดขนาดของกรอบ */
     border: 2px solid #ddd; /* เส้นขอบ */
     border-radius: 10px; /* ทำให้ขอบโค้งมน */
@@ -294,17 +284,6 @@ section.Skills .card-wrapper .card:hover {
 }
 
 section.Skills .card-wrapper .card img {
-    /* position: absolute;
-    top: -3.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    width: 44px;
-    height: 44px; */
-
     width: 100px; /* ปรับขนาดรูปภาพ */
     height: auto;
     display: block;
@@ -312,10 +291,6 @@ section.Skills .card-wrapper .card img {
 }
 
 section.Skills .card-wrapper .card h2 {
-    /* font-weight: 400;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem; */
-
     font-size: 18px;
     color: #333;
     margin: 0;
@@ -335,6 +310,176 @@ section.Skills .card-wrapper .card:hover h2,
 section.Skills .card-wrapper .card:hover p {
     color: var(--pure);
 }
+
+/* From Uiverse.io by 0xnihilism */ 
+section.Skills .card-wrapper .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust this value to increase or decrease space between buttons */
+    padding: 20px;
+  }
+  
+  section.Skills .card-wrapper  .brutalist-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #000000;
+    border-radius: 12px;
+    padding: 0;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    position: relative;
+    box-shadow: 4px 4px 0px #000000;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 145px;
+    width: 145px;
+    cursor: pointer;
+  }
+  
+  section.Skills .card-wrapper .brutalist-button.openai {
+    background-color: #fff;
+  }
+  
+  section.Skills .card-wrapper .brutalist-button::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -150%;
+    width: 300%;
+    height: 300%;
+    border-radius: 50%;
+    transform: translateX(-50%) scale(0);
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 1;
+  }
+  
+  section.Skills .card-wrapper .brutalist-button.openai::before {
+    background-color: #DCDCDC;
+  }
+  
+  section.Skills .card-wrapper .brutalist-button.claude::before {
+    background-color: #e3d19c;
+  }
+  
+  section.Skills .card-wrapper .brutalist-button:hover::before {
+    transform: translateX(-50%) scale(1);
+  }
+  
+  section.Skills .card-wrapper .brutalist-button:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0px #000000;
+  }
+  
+  section.Skills .card-wrapper .brutalist-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000000;
+  }
+  
+  section.Skills .card-wrapper .openai-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  section.Skills .card-wrapper .openai-logo {
+    align-items: center;
+    justify-content: center;
+    background-color: #0f1715; /* OpenAI's green color */
+    border-radius: 50%; /* This creates the circular background */
+  }
+  
+  section.Skills .card-wrapper .openai-icon {
+    width: 54px;
+    height: 54px;
+    fill: #ffffff; /* White color for the SVG */
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  
+  section.Skills .card-wrapper .brutalist-button:hover .openai-logo {
+    animation: spin 5s linear infinite;
+    width: 50px;
+    height: 50px;
+    top: 28%;
+  }
+  
+  section.Skills .card-wrapper .brutalist-button:hover .openai-icon {
+    transform: scale(0.6);
+  }
+  
+  section.Skills .card-wrapper .button-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.3;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    z-index: 2;
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    right: 0;
+  }
+  
+  section.Skills .card-wrapper .button-text span:first-child {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+  
+  section.Skills .card-wrapper .button-text span:last-child {
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #000000;
+  }
+  
+  section.Skills .card-wrapper .brutalist-button:hover .button-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  section.Skills .card-wrapper .brutalist-button.openai:hover .button-text {
+    color: var(--dark);
+  }
+  
+  section.Skills .card-wrapper .brutalist-button.openai:hover .button-text span:last-child {
+    color: var(--dark);
+  }
+  
+  @media (hover: hover) and (pointer: fine) {
+    .brutalist-button:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: 8px 8px 0px #000000;
+    }
+  }
+
+  /* สิ้นสุดหน้า Skills*/
+  
 
 section.freelancer {
     text-align: center;
@@ -547,10 +692,25 @@ section.blog .card-wrapper .card:hover {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+section.blog .card-wrapper .card .img-wrapper {
+    display: flex;
+    justify-content: center; /* จัดกึ่งกลางแนวนอน */
+    align-items: center; /* จัดกึ่งกลางแนวตั้ง */
+    background-color: #fff; /* ใส่พื้นหลังสีขาวเพื่อแยกจากพื้นหลัง */
+    padding: 10px; /* เพิ่มพื้นที่รอบรูป */
+    border-radius: 10px; /* ทำให้ขอบโค้งมน */
+}
+
 section.blog .card-wrapper .card .img-wrapper img {
-    width: 100%;
+    /* width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; */
+
+    width: 100%; /* ทำให้รูปเต็มพื้นที่ */
+    height: auto; /* ป้องกันการบิดเบี้ยว */
+    object-fit: cover; /* ปรับให้รูปเต็มโดยไม่เสียอัตราส่วน */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* เพิ่มเงาให้รูป */
+    border-radius: 8px; /* ทำให้ขอบรูปมน */
 }
 
 section.blog .card-wrapper .card .card-content {
@@ -593,18 +753,26 @@ section.blog .card-wrapper .card .card-content a.read-more {
     font-size: 1.2rem;
 }
 
+
+
 /* สไตล์ Modal */
 section.blog .card-wrapper .modal {
-    display: none; /* ซ่อน Modal ตั้งแต่แรก */
+    display: none; /* ซ่อน Modal เมื่อเริ่มต้น */
     position: fixed;
-    z-index: 1000;
+    z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* ทำให้พื้นหลังมืดลง */
     justify-content: center;
     align-items: center;
+    transition: opacity 0.3s ease-in-out; /* เพิ่มเอฟเฟกต์เปิด-ปิด */
+}
+
+/* เพิ่ม overlay สำหรับมืดลงทั่วทั้งหน้า */
+section.blog .card-wrapper .modal.show {
+    display: flex; /* แสดง Modal เมื่อคลิก */
 }
 
 /* เนื้อหา Modal */
@@ -616,6 +784,7 @@ section.blog .card-wrapper .modal-content {
     width: 80%;
     text-align: center;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    position: relative; /* ให้ปุ่มปิดอยู่ภายใน */
 }
 
 /* ปุ่มปิด Modal */
@@ -624,13 +793,25 @@ section.blog .card-wrapper .Project-close {
     top: 10px;
     right: 20px;
     color: #333;
-    font-size: 60px;
+    font-size: 40px; /* ลดขนาดให้พอดี */
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-section.blog .card-wrapper .close:hover {
+section.blog .card-wrapper .Project-close:hover {
     color: var(--primary);
 }
+
+/* ปรับสไตล์รูปภาพใน Modal */
+.modal-img {
+    width: 100%; /* ปรับให้เต็มความกว้างของ Modal */
+    max-height: 300px; /* กำหนดความสูงสูงสุด */
+    object-fit: cover; /* ป้องกันการบิดเบี้ยวของรูป */
+    border-radius: 10px; /* ทำให้ขอบมน */
+    margin-bottom: 15px; /* เพิ่มระยะห่างด้านล่าง */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* เพิ่มเงาให้รูป */
+}
+
 
 /* สิ้นสุด */
 
@@ -729,61 +910,10 @@ footer .copyright {
     width: 30px;
 }
 
-.mobile-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1001;
-    background: var(--light);
-    width: 100%;
-    height: 100%;
-    padding: 2rem;
-    padding-top: 5rem;
-    transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    -moz-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    -o-transform: translateX(-100%);
-    transition: all .5s ease-in-out;
-    -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -ms-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-}
 
-.open {
-    transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
-}
-
-.times {
-    position: fixed;
-    top: 30px;
-    right: 30px;
-    border: none;
-    background: none;
-    outline: none;
-    cursor: pointer;
-}
-
-.times img {
-    width: 30px;
-}
-
-.mobile-nav ul {
-    list-style-type: none;
-}
-
-.mobile-nav ul li a {
-    color: var(--secondary);
-    text-decoration: none;
-    font-size: 2rem;
-}
-
-@media (max-width:1024px) {
+/* ในมือถือ*/
+@media (max-width: 844px) {
+    /* การจัดเรียงสำหรับเมนู */
     header #main-nav {
         display: none;
     }
@@ -792,65 +922,96 @@ footer .copyright {
         display: block;
     }
 
+    /* สำหรับส่วน hero */
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* จัดกลางแนวตั้ง */
+        padding-top: 5rem; /* ลดระยะห่างด้านบนให้พอดี */
+        text-align: center;
+        padding: 0 1rem; /* เพิ่ม padding ด้านซ้ายขวา */
+    }
+
     .hero .left img {
-        width: 260px;
+        width: 220px; /* ปรับขนาดให้เหมาะสม */
+        height: auto;
+        margin-bottom: 20px;
     }
 
     .hero .right h1 {
-        font-size: 3rem;
+        font-size: 2.4rem; /* ปรับขนาดฟอนต์ */
+        margin: 0;
+        padding: 0;
     }
 
-    .hero {
-        padding-top: 10rem;
-    }
-
+    /* ปรับ clip-path สำหรับ header */
     header {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 27% 89%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%); /* ปรับให้พอดีกับหน้าจอ */
     }
 
+    /* สำหรับส่วน About */
     section.about .about-me-img {
-        height: 360px;
+        height: 280px; /* ลดขนาดภาพในส่วน About */
+        margin-bottom: 20px; /* เพิ่มระยะห่างระหว่างภาพและข้อความ */
     }
 
+    /* การจัดเรียงกริดในส่วน Services */
     section.services .card-wrapper {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr); /* เปลี่ยนเป็น 1 คอลัมน์ */
+        margin-top: 3rem; /* เพิ่มระยะห่างจากส่วนอื่น */
     }
 
+    /* สำหรับส่วน Freelancer */
+    section.freelancer h1 {
+        line-height: 1.2;
+        font-size: 2.5rem; /* ลดขนาดฟอนต์ในส่วน Freelancer */
+    }
+
+    section.freelancer {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 60% 95%, 0 100%);
+        padding-bottom: 6rem;
+    }
+
+    /* การจัดเรียงกริดในส่วน Work */
     section.work .card-wrapper {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr); /* เปลี่ยนเป็น 1 คอลัมน์ */
     }
 
+    /* การจัดการส่วน Contact */
+    section.contact .card-wrapper {
+        grid-template-columns: repeat(1, 1fr); /* เปลี่ยนเป็น 1 คอลัมน์ */
+    }
+
+    section.contact .input-wrap {
+        grid-template-columns: repeat(1, 1fr); /* เปลี่ยนเป็น 1 คอลัมน์ */
+    }
+
+    /* เพิ่มระยะห่างระหว่างส่วนต่าง ๆ */
+    section {
+        padding: 3rem 0; /* ลดระยะห่างเพื่อให้พอดีกับหน้าจอ */
+    }
+
+    .section-heading + p {
+        margin-bottom: 2rem;
+    }
+
+    /* การปรับปรุงส่วน Blog */
     section.blog .card-wrapper {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    section.blog {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 67% 97%, 0 100%);
-    }
-}
-
-@media (max-width:576px) {
-    .hero {
-        flex-direction: column;
+    /* ปรับความกว้างของปุ่มปิดในเมนู */
+    .times {
+        top: 20px;
+        right: 20px;
     }
 
-    header {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 69% 95%, 0 100%);
+    .times img {
+        width: 25px; /* ขนาดเล็กลงเพื่อให้เหมาะสม */
     }
 
-    .hero .right {
-        position: absolute;
-        top: 260px;
-        padding: 0 1rem;
-        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
-    }
-
-    .hero .left {
-        margin-top: -5rem;
-        margin-right: -9rem;
-        padding-bottom: 4rem;
-    }
-
+    /* การจัดรูปภาพในส่วนต่าง ๆ */
     .about-inner-wrap {
         flex-direction: column;
     }
@@ -864,41 +1025,28 @@ footer .copyright {
         justify-content: center;
     }
 
-    section {
-        padding: 4rem 0;
+    /* สำหรับส่วน Blog */
+    section.blog {
+        padding: 1rem 0;
     }
 
-    section.services .card-wrapper {
-        grid-template-columns: repeat(1, 1fr);
-        margin-top: 6rem;
+    /* สำหรับปุ่มในเมนูมือถือ */
+    .mobile-nav ul li a {
+        font-size: 1.8rem; /* ขนาดฟอนต์ให้เล็กลงเพื่อให้พอดี */
+        padding: 1rem 0;
     }
 
-    section.freelancer h1 {
-        line-height: 1.2;
+    /* สำหรับปุ่มปิดเมนู */
+    .times {
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
     }
 
-    section.freelancer {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 67% 90%, 0 100%);
-        padding-bottom: 8rem;
-    }
-
-    section.reviews .slider .slide {
-        padding: 0;
-    }
-
-    .section-heading+p {
-        margin-bottom: 3rem;
-    }
-
-    section.work .card-wrapper {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    section.contact .card-wrapper {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    section.contact .input-wrap {
-        grid-template-columns: repeat(1, 1fr);
+    .times img {
+        width: 100%; /* ทำให้ปุ่มปิดเหมาะสมกับขนาด */
+        height: 100%;
     }
 }
+

@@ -32,27 +32,30 @@ function closeImageModal() {
   document.getElementById("imageModal").style.display = "none";
 }
 
-// กดดูข้อมูลโปรเจค
-function openProjectModal() {
-  document.getElementById("Project-Modal").style.display = "flex";
+// ฟังก์ชันเปิด Modal
+function openProjectModal(event) {
+  event.preventDefault(); // หยุดการทำงานของลิงก์ เพื่อไม่ให้หน้าเว็บขยับ
+  document.getElementById("Project-Modal").classList.add("show"); // แสดง Modal
+  document.body.classList.add("modal-open"); // ป้องกันการเลื่อนหน้า
 }
 
-// ปิด Modal โปรเจค
+
+// ฟังก์ชันปิด Modal
 function closeProjectModal() {
-  document.getElementById("Project-Modal").style.display = "none";
+  document.getElementById("Project-Modal").classList.remove("show"); // ลบ class .show
+  document.body.classList.remove("modal-open"); // เปิดการเลื่อนหน้าอีกครั้ง
 }
 
-
-// ปิด Modal เมื่อคลิกนอกพื้นที่
+// ปิด Modal เมื่อคลิกข้างนอก
 window.onclick = function(event) {
-  // ตรวจสอบเมื่อคลิกนอก Modal รูปภาพหรือโปรเจค
-  if (event.target == document.getElementById("imageModal")) {
-    closeImageModal();
+  let modal = document.getElementById("Project-Modal");
+  if (event.target === modal) {
+      modal.classList.remove("show"); // ลบ class .show เมื่อคลิกข้างนอก
+      document.body.classList.remove("modal-open"); // เปิดการเลื่อนหน้าอีกครั้ง
   }
-  if (event.target == document.getElementById("Project-Modal")) {
-    closeProjectModal();
-  }
-}
+};
+
+
 
 
 // ฟังก์ชั่นตรวจสอบการเลื่อนหน้า
