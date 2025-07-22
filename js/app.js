@@ -68,10 +68,3 @@ window.onscroll = function() {
   }
 };
 
-// ฟังก์ชั่นเลื่อนหน้าไปข้างบน
-function scrollToTop() {
-  window.scrollTo({
-      top: 0,
-      behavior: "smooth"  // ใช้การเลื่อนที่นุ่มนวล
-  });
-}
