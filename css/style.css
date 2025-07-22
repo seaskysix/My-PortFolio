@@ -570,12 +570,13 @@ section.work .card-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
+    
 }
 
 section.work .card-wrapper .card {
     position: relative;
     height: 250px;
-
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 section.work .card-wrapper .card .overlay {

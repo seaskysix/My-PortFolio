@@ -15,12 +15,16 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="./css/style.css">
 
+    <!-- animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 
 <body>
 
     <div id="pro-loader"></div>
 
+    <!-- ยังไม่ได้ใช้งาน -->
     <div class="site-main-wrapper">
         <button class="hamberger">
             <img src="./images/hamberger.svg" alt="">
@@ -36,9 +40,12 @@
                 <li><a href="#">Blog</a></li>
             </ul> -->
     </div>
+
     <header>
         <div class="container">
-            <nav id="main-nav" class="flex items-center justify-between">
+
+            <!-- เเบนเนอร์ -->
+            <nav id="main-nav" class="flex items-center justify-between" data-aos="fade-down">
                 <div class="left flex items-center">
                     <div class="branding">
                         <!-- <img src="./images/logo.svg" alt=""> -->
@@ -58,10 +65,15 @@
                     </a>
                 </div>
             </nav>
-            <div class="hero flex items-center justify-between">
+
+            <!-- รูปภาพข้อมูลใน header-->
+            <div class="hero flex items-center justify-between" data-aos="fade-up">
+                <!-- รูปภาพ -->
                 <div class="left flex-1 flex justify-center">
                     <img src="img/IMG_0063-Photoroom.png" alt="">
                 </div>
+
+                <!-- ข้อความ -->
                 <div class="right flex-1">
                     <h6><i class="ph-bold ph-hand-waving"></i> Welcome to my portfolio</h6>
                     <h1>I’m a student <span>Designer</span></h1>
@@ -73,14 +85,19 @@
                 </div>
             </div>
         </div>
+
     </header>
 
+    <!-- ข้อมูลส่วนตัว -->
     <section id="about" class="about">
         <div class="container flex items-center about-inner-wrap">
-            <div class="flex-1">
-                <img class="about-me-img" src="img/IMG_8985.jpeg" alt="">
+            <!-- รูปภาพ -->
+            <div class="flex-1" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                <img class="about-me-img" src="img/IMG_8985.jpeg">
             </div>
-            <div class="flex-1 right">
+
+            <!-- ข้อความ -->
+            <div class="flex-1 right" data-aos="fade-left">
                 <h1>ข้อมูล <span>ส่วนตัว</span></h1>
                 <h3>สวัสดีครับ ผมชื่อ นาย นราทร กุมารกาศ</h3>
                 <p>ชื่อเล่น : โจ</p>
@@ -98,12 +115,13 @@
                     </div> -->
             </div>
         </div>
+
     </section>
 
-    <!-- หน้าข้อมูลความสามารถ -->
+    <!-- ข้อมูลความสามารถ -->
     <section id="services" class="Skills">
         <!-- โปรเเกรม -->
-        <div class="container">
+        <div class="container" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
             <h1 class="section-heading"><span>Our </span>Skills</h1>
             <div class="card-wrapper">
                 <!-- <div class="card">
@@ -205,36 +223,14 @@
 
             </div>
         </div>
+
         <br><br><br><br><br>
+
         <!-- ภาษา -->
-        <div class="container">
+        <div class="container" data-aos="fade-up" data-aos-duration="3000">
             <h1 class="section-heading"><span>Programming </span>Language</h1>
             <!-- <p>ภาษาเเละโปรเเกรมที่ใช้เป็น</p> -->
             <div class="card-wrapper">
-                <!-- <div class="card">
-                        <img src="img/html-icon.svg">
-                        <h2>Html</h2>
-                    </div>
-                    <div class="card">
-                        <img src="img/CSS3_logo.svg">
-                        <h2>Css</h2>
-                    </div>
-                    <div class="card">
-                        <img src="img/nodejs-icon.svg">
-                        <h2>Node Js</h2>
-                    </div>
-                    <div class="card">
-                        <img src="img/nextjs-icon.svg">
-                        <h2>Next Js</h2>
-                    </div>
-                    <div class="card">
-                        <img src="img/c.svg">
-                        <h2>c</h2>
-                    </div>
-                    <div class="card">
-                        <img src="img/SQL Database.svg">
-                        <h2>SQL</h2>
-                    </div> -->
 
                 <div class="button-container">
                     <button class="brutalist-button openai">
@@ -356,23 +352,51 @@
             </div>
         </section> -->
 
-
+    <!-- เกียรติบัตร -->
     <section id="work" class="work">
         <div class="container">
             <h1 class="section-heading"><span>Our</span> Works</h1>
 
-            <!-- เกียรติบัตร -->
+            <!-- รูปเกียรติบัตร -->
             <div class="card-wrapper">
-                <div class="card">
+                <div class="card" data-aos="zoom-out-up" data-aos-duration="1000">
+                    <div class="overlay">
+                        <a href="#work" onclick="openImageModal('img/IMG_2995.jpeg')">คลิกเพื่อขยาย</a>
+                    </div>
+                    <img src="img/IMG_2995.jpeg">
+                </div>
+
+                <div class="card" data-aos="zoom-out-up" data-aos-duration="1000">
+                    <div class="overlay">
+                        <a href="#work" onclick="openImageModal('img/IMG_2996.jpeg')">คลิกเพื่อขยาย</a>
+                    </div>
+                    <img src="img/IMG_2996.jpeg">
+                </div>
+
+                <div class="card" data-aos="zoom-out-up" data-aos-duration="1000">
+                    <div class="overlay">
+                        <a href="#work" onclick="openImageModal('img/IMG_3060.jpeg')">คลิกเพื่อขยาย</a>
+                    </div>
+                    <img src="img/IMG_3060.jpeg">
+                </div>
+
+                <div class="card" data-aos="zoom-out-up" data-aos-duration="1000">
+                    <div class="overlay">
+                        <a href="#work" onclick="openImageModal('img/IMG_3889.jpeg')">คลิกเพื่อขยาย</a>
+                    </div>
+                    <img src="img/IMG_3889.jpeg">
+                </div>
+
+                <div class="card" data-aos="zoom-out-up" data-aos-duration="1000">
                     <div class="overlay">
                         <a href="#work" onclick="openImageModal('img/IMG_1564.jpeg')">คลิกเพื่อขยาย</a>
                     </div>
                     <img src="img/IMG_1564.jpeg">
                 </div>
 
-                <div class="card">
+                <div class="card" data-aos="zoom-out-up" data-aos-duration="1000">
                     <div class="overlay">
-                        <a href="#work" onclick="openImageModal('img/IMG_1564.jpeg')">คลิกเพื่อขยาย</a>
+                        <a href="#work" onclick="openImageModal('img/IMG_1563.jpeg')">คลิกเพื่อขยาย</a>
                     </div>
                     <img src="img/IMG_1563.jpeg">
                 </div>
@@ -389,10 +413,10 @@
 
     <!-- โปรเจค -->
     <section id="project" class="blog">
-        <div class="container">
+        <div class="container" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" data-aos-duration="2000">
             <h1 class="section-heading"><span>Pro</span> Ject</h1>
-            <div class="card-wrapper">
-
+            <div class="card-wrapper" >
                 <div class="card" onclick="openProjectModal()">
                     <div class="img-wrapper">
                         <img src="img/ผลงาน 1.PNG">
@@ -448,11 +472,11 @@
     </section>
 
     <!-- ติดต่อ -->
-    <section id="ติดต่อได้ที่นี่" class="contact">
+    <section id="ติดต่อได้ที่นี่" class="contact" data-aos="fade-down" data-aos-duration="1000">
         <div class="container">
             <h1 class="section-heading">ติดต่อได้ <span>ที่นี่</span></h1>
             <!-- <p>We provide high standar clean website for your business solutions</p> -->
-            <div class="card-wrapper">
+            <div class="card-wrapper" >
                 <div class="card">
                     <img src="img/Facebook_icon.svg" alt="">
                     <br><br>
@@ -480,9 +504,11 @@
                     </a>
                 </div>
             </div>
+        </section>
 
             <button id="scrollToTopBtn" class="scroll-to-top-btn" onclick="scrollToTop()"><i
                     class="ph ph-arrow-elbow-left-up"></i>กลับไปข้างบน</button>
+
 
             <!-- From Uiverse.io by satyamchaudharydev -->
             <!-- <button id="scrollToTopBtn" onclick="scrollToTop()">
@@ -508,6 +534,12 @@
             <script type="text/javascript"
                 src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
             <script src="./js/app.js"></script>
+
+            <!-- script animation -->
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
 </body>
 
 </html>

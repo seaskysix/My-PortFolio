@@ -1,23 +1,23 @@
-$(document).ready(function(){
-$('.slider').slick({
-    arrows:false,
-    dots:true,
-    appendDots:'.slider-dots',
-    dotsClass:'dots'
-});
+$(document).ready(function () {
+  $('.slider').slick({
+    arrows: false,
+    dots: true,
+    appendDots: '.slider-dots',
+    dotsClass: 'dots'
+  });
 
 
-let hamberger = document.querySelector('.hamberger');
-let times = document.querySelector('.times');
-let mobileNav = document.querySelector('.mobile-nav');
+  let hamberger = document.querySelector('.hamberger');
+  let times = document.querySelector('.times');
+  let mobileNav = document.querySelector('.mobile-nav');
 
-hamberger.addEventListener('click', function(){
-  mobileNav.classList.add('open');  
-});
+  hamberger.addEventListener('click', function () {
+    mobileNav.classList.add('open');
+  });
 
-times.addEventListener('click', function(){
-    mobileNav.classList.remove('open');  
-});
+  times.addEventListener('click', function () {
+    mobileNav.classList.remove('open');
+  });
 
 });
 
@@ -47,11 +47,11 @@ function closeProjectModal() {
 }
 
 // ปิด Modal เมื่อคลิกข้างนอก
-window.onclick = function(event) {
+window.onclick = function (event) {
   let modal = document.getElementById("Project-Modal");
   if (event.target === modal) {
-      modal.classList.remove("show"); // ลบ class .show เมื่อคลิกข้างนอก
-      document.body.classList.remove("modal-open"); // เปิดการเลื่อนหน้าอีกครั้ง
+    modal.classList.remove("show"); // ลบ class .show เมื่อคลิกข้างนอก
+    document.body.classList.remove("modal-open"); // เปิดการเลื่อนหน้าอีกครั้ง
   }
 };
 
@@ -59,12 +59,19 @@ window.onclick = function(event) {
 
 
 // ฟังก์ชั่นตรวจสอบการเลื่อนหน้า
-window.onscroll = function() {
+window.onscroll = function () {
   // เช็คว่าผู้ใช้เลื่อนลงไปล่างสุดหรือไม่
   if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      document.getElementById("scrollToTopBtn").style.display = "block";  // แสดงปุ่ม
+    document.getElementById("scrollToTopBtn").style.display = "block";  // แสดงปุ่ม
   } else {
-      document.getElementById("scrollToTopBtn").style.display = "none";   // ซ่อนปุ่ม
+    document.getElementById("scrollToTopBtn").style.display = "none";   // ซ่อนปุ่ม
   }
 };
 
+// ฟังก์ชั่นเลื่อนหน้าไปข้างบน
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"  // ใช้การเลื่อนที่นุ่มนวล
+  });
+}
